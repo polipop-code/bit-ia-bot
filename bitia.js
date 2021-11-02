@@ -23,10 +23,11 @@ client.on("message", (message) => {
 	const command = args.shift().toLowerCase();
 
 	if (command === "ping") {
+		let ping = Math.floor(message.client.ping);
 		message.channel.send({
 			embed: {
 				color: 3447003,
-				description: `pong 🏓!!`,
+				description: "pong 🏓!! " + ping + "ms",
 			},
 		});
 	} else if (command === "hello") {
